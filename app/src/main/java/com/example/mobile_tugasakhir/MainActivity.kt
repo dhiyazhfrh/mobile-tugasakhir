@@ -11,7 +11,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        ref = FirebaseDatabase.getInstance().getReference()
+        ref = FirebaseDatabase.getInstance().getReference("sensor")
 
         loadData()
     }
@@ -21,13 +21,9 @@ class MainActivity : AppCompatActivity() {
         val soil = findViewById<TextView>(R.id.moist_value)
         val temp = findViewById<TextView>(R.id.temp_value)
         val water = findViewById<TextView>(R.id.water_value)
-        val humidval = ref.child("humidity_value")
-        val soilval = ref.child("moisture_value")
-        val tempval = ref.child("temperature_value")
-        val waterval = ref.child("water_value")
-        humidval.addValueEventListener(object: ValueEventListener{
+        ref.addValueEventListener(object: ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
-                value = snapshot.child("humidity_value").getValue().toString()
+                value = snapshot.child("humidity_value").value.toString()
                 humid.setText(value)
             }
             override fun onCancelled(error: DatabaseError) {
@@ -35,7 +31,7 @@ class MainActivity : AppCompatActivity() {
             }
         } )
 
-        soilval.addValueEventListener(object: ValueEventListener{
+        ref.addValueEventListener(object: ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
                 soil.setText(snapshot.child("moisture_value").value.toString())
             }
@@ -44,7 +40,7 @@ class MainActivity : AppCompatActivity() {
             }
         } )
 
-        tempval.addValueEventListener(object: ValueEventListener{
+        ref.addValueEventListener(object: ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
                 temp.setText(snapshot.child("temperature_value").value.toString())
             }
@@ -53,7 +49,7 @@ class MainActivity : AppCompatActivity() {
             }
         } )
 
-        waterval.addValueEventListener(object: ValueEventListener{
+        ref.addValueEventListener(object: ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
                 water.setText(snapshot.child("water_value").value.toString())
             }
