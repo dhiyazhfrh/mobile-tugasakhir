@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "561294668246",
+    "firebase_url": "https://smart-garden-project-9d1e5-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "smart-garden-project-9d1e5",
+    "storage_bucket": "smart-garden-project-9d1e5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:561294668246:android:39fa5e0b0918cacc937477",
+        "android_client_info": {
+          "package_name": "com.example.mobile_tugasakhir"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "561294668246-h3c15rvfcq7f0tlqonfgqpiuojle47d5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCShGUojUHtH92dAc9_cQbjJ66cObgCPUI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "561294668246-h3c15rvfcq7f0tlqonfgqpiuojle47d5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
