@@ -7,11 +7,11 @@ import com.google.firebase.database.*
 
 class MainActivity : AppCompatActivity() {
     lateinit var ref: DatabaseReference
-
+    lateinit var value: String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        ref = FirebaseDatabase.getInstance().getReference("sensor")
+        ref = FirebaseDatabase.getInstance().getReference()
 
         loadData()
     }
@@ -27,7 +27,8 @@ class MainActivity : AppCompatActivity() {
         val waterval = ref.child("water_value")
         humidval.addValueEventListener(object: ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
-                humid.setText(snapshot.child("humidity_value").value.toString())
+                value = snapshot.child("humidity_value").getValue().toString()
+                humid.setText(value)
             }
             override fun onCancelled(error: DatabaseError) {
 
