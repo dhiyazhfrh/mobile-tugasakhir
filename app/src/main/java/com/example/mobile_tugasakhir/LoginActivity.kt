@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 
 class LoginActivity : AppCompatActivity() {
@@ -31,7 +32,12 @@ class LoginActivity : AppCompatActivity() {
                 Toast.makeText(this, "You insert a wrong pin !", Toast.LENGTH_SHORT).show()
             }
         }
+    }
 
-
+    private fun reset(){
+        val reset = findViewById<TextView>(R.id.reset)
+        reset.setOnClickListener{
+            startActivity(Intent(this, ResetActivity::class.java))
+        }
     }
 }

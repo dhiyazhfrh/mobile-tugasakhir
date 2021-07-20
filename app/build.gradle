@@ -5,6 +5,9 @@ plugins {
 }
 
 android {
+    dexOptions {
+        javaMaxHeapSize "2g"
+    }
 
     buildFeatures {
         viewBinding true
