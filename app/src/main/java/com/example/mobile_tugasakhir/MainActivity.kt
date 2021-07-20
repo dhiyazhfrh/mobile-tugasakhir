@@ -2,6 +2,7 @@ package com.example.mobile_tugasakhir
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ImageView
 import android.widget.TextView
 import com.google.firebase.database.*
 
@@ -12,8 +13,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         ref = FirebaseDatabase.getInstance().getReference("sensor")
-
+        val logout = findViewById<ImageView>(R.id.logout_button)
         loadData()
+
+        logout.setOnClickListener {
+            finish()
+        }
+
     }
 
     private fun loadData(){
