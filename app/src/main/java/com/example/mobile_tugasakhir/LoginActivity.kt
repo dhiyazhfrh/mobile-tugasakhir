@@ -12,17 +12,9 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-        login()
-
-
-
-    }
-
-    private fun login(){
-        var pass = findViewById<EditText>(R.id.login_pass)
-        var btn = findViewById<Button>(R.id.login_button)
+        val pass = findViewById<EditText>(R.id.login_pass)
+        val btn = findViewById<Button>(R.id.login_button)
         var passcode = pass.text.toString()
-
         btn.setOnClickListener {
             if(passcode == "group2"){
                 startActivity(Intent(this, MainActivity::class.java))
@@ -31,6 +23,8 @@ class LoginActivity : AppCompatActivity() {
                 Toast.makeText(this, "You insert a wrong pin !", Toast.LENGTH_SHORT).show()
             }
         }
-    }
 
+
+
+    }
 }
