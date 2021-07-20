@@ -9,11 +9,9 @@ import android.widget.TextView
 import android.widget.Toast
 
 class LoginActivity : AppCompatActivity() {
-    lateinit var pin: String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-        pin = 1234.toString()
         login()
 
 
@@ -26,7 +24,7 @@ class LoginActivity : AppCompatActivity() {
         val pinNumber = pass.text.toString()
 
         btn.setOnClickListener {
-            if(pinNumber == pin){
+            if(pinNumber == "1234"){
                 startActivity(Intent(this, MainActivity::class.java))
             }else{
                 Toast.makeText(this, "You insert a wrong pin !", Toast.LENGTH_SHORT).show()
