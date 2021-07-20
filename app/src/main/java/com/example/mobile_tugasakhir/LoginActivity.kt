@@ -19,9 +19,9 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun login(){
-        val pass = findViewById<EditText>(R.id.login_pass)
-        val btn = findViewById<Button>(R.id.login_button)
-        val pinNumber = pass.text.toString()
+        var pass = findViewById<EditText>(R.id.login_pass)
+        var btn = findViewById<Button>(R.id.login_button)
+        var pinNumber = pass.text.toString()
 
         btn.setOnClickListener {
             if(pinNumber == "1234"){
@@ -32,10 +32,4 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    private fun reset(){
-        val reset = findViewById<TextView>(R.id.reset)
-        reset.setOnClickListener{
-            startActivity(Intent(this, ResetActivity::class.java))
-        }
-    }
 }
