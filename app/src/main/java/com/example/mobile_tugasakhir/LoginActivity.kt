@@ -21,11 +21,12 @@ class LoginActivity : AppCompatActivity() {
     private fun login(){
         var pass = findViewById<EditText>(R.id.login_pass)
         var btn = findViewById<Button>(R.id.login_button)
-        var pinNumber = pass.text.toString()
+        var passcode = pass.text.toString()
 
         btn.setOnClickListener {
-            if(pinNumber == "1234"){
+            if(passcode == "group2"){
                 startActivity(Intent(this, MainActivity::class.java))
+                finish()
             }else{
                 Toast.makeText(this, "You insert a wrong pin !", Toast.LENGTH_SHORT).show()
             }
