@@ -23,7 +23,7 @@ class LoginActivity : AppCompatActivity() {
                 startActivity(Intent(this, MainActivity::class.java))
                 finish()
             } else {
-                Toast.makeText(this, "You insert a wrong pin !", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "You are insert a wrong pin!", Toast.LENGTH_SHORT).show()
             }
 
     }
